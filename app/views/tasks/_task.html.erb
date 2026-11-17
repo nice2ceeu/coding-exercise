@@ -1,0 +1,13 @@
+<li class="task task-<%= task.status %>" id="<%= dom_id(task) %>">
+  <span class="task-title"><%= task.title %></span>
+  <span class="task-status"><%= task_status_label(task) %></span>
+  <span class="<%= class_names("task-due", "task-due-empty" => task.due_date.blank?) %>"><%= task_due_date(task) %></span>
+  <span class="task-actions">
+    <% unless task.completed? %>
+      <%= button_to "Mark Complete", task_path(task),
+            method: :patch,
+            params: { task: { status: "completed" } },
+            class: "button button-secondary button-small" %>
+    <% end %>
+  </span>
+</li>

@@ -9,11 +9,19 @@
 
   <section class="tasks">
     <h2>Tasks</h2>
-    <p class="notice-box">
-      Tasks have not been implemented yet as part of the starter application.
-      <br>
-      See <code>TAKE_HOME.md</code> for the coding exercise.
-    </p>
+
+    <%= render "tasks/summary", project: @project %>
+
+    <% if @tasks.any? %>
+      <ul class="task-list">
+        <%= render @tasks %>
+      </ul>
+    <% else %>
+      <p class="empty">No tasks yet.</p>
+    <% end %>
+
+    <h3>Add a Task</h3>
+    <%= render "tasks/form", project: @project, task: @task %>
   </section>
 
   <div class="actions">

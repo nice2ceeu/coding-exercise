@@ -1,0 +1,31 @@
+<%= form_with model: [ project, task ], class: "task-form" do |form| %>
+  <% if task.errors.any? %>
+    <div class="errors" role="alert">
+      <h2><%= pluralize(task.errors.count, "error") %> prevented this task from being saved:</h2>
+      <ul>
+        <% task.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.select :status, Task.statuses.keys.map { |status| [ status.titleize, status ] } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :due_date, "Due date" %>
+    <%= form.date_field :due_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Add Task", class: "button" %>
+  </div>
+<% end %>

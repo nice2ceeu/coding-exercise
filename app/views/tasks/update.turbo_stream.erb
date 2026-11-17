@@ -1,0 +1,3 @@
+<%# Replaces just the updated row and the counter, leaving the rest of the page alone. %>
+<%= turbo_stream.replace @task %>
+<%= turbo_stream.replace "task_summary", partial: "tasks/summary", locals: { project: @task.project } %>

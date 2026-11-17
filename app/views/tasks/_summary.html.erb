@@ -1,0 +1,5 @@
+<p class="task-summary" id="task_summary">
+  <% if project.tasks.any? %>
+    <%= project.tasks.completed.count %> of <%= project.tasks.count %> tasks completed
+  <% end %>
+</p>

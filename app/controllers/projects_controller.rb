@@ -6,6 +6,8 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @tasks = @project.tasks.incomplete_first
+    @task = @project.tasks.build
   end
 
   def new

@@ -1,0 +1,23 @@
+portal_login_bug:
+  project: customer_portal
+  title: Fix login bug
+  status: pending
+  due_date: 2026-11-20
+
+portal_dashboard:
+  project: customer_portal
+  title: Create dashboard
+  status: in_progress
+  due_date: 2026-11-22
+
+portal_documentation:
+  project: customer_portal
+  title: Update documentation
+  status: completed
+  due_date: 2026-11-25
+
+# Intentionally has no due date: the task list has to handle that.
+portal_backlog:
+  project: customer_portal
+  title: Triage the support backlog
+  status: pending
